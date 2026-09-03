@@ -35,9 +35,22 @@ python -m http.server 8000
 
 ## Images
 
-The files in `assets/img/` are **placeholders**. See
-[`MISSING-ASSETS.md`](MISSING-ASSETS.md) for the mapping to the original
-Claude Design uploads and how to drop the real files in.
+The 11 product visuals in `assets/img/` are the real campaign artworks,
+renamed from the Claude Design project's `uploads/` folder:
+
+| `uploads/`                    | `assets/img/`                 | Section     |
+| ----------------------------- | ----------------------------- | ----------- |
+| `pasted-1788366779915-0.png`  | `jaquar-medley-hero.png`      | Jaquar      |
+| `pasted-1788366827942-0.png`  | `jaquar-medley-lifestyle.png` | Jaquar      |
+| `pasted-1788366867021-0.png`  | `softcare-antibacterial.png`  | Soft Care   |
+| `pasted-1788366934332-0.png`  | `softcare-blossom-refill.png` | Soft Care   |
+| `pasted-1788366912786-0.png`  | `crew-citrus-floor.png`       | Crew        |
+| `pasted-1788366893901-0.png`  | `crew-furniture-cleaner.png`  | Crew        |
+| `pasted-1788366954854-0.png`  | `crew-stainless-steel.png`    | Crew        |
+| `pasted-1788366972343-0.png`  | `borngood-basket.png`         | Born Good   |
+| `pasted-1788366983018-0.png`  | `borngood-lineup.png`         | Born Good   |
+| `pasted-1788367915215-0.png`  | `borngood-flatlay.png`        | Born Good   |
+| `pasted-1788368039930-0.png`  | `perkyjerky-sweet-snappy.png` | Perky Jerky |
 
 ## Structure
 
@@ -47,7 +60,6 @@ portfolio-v2/
 ├── assets/
 │   ├── css/styles.css
 │   ├── js/main.js
-│   └── img/                 # 11 product visuals (currently placeholders)
-├── MISSING-ASSETS.md
+│   └── img/                 # 11 product visuals
 └── README.md
 ```
