@@ -143,6 +143,13 @@ ul { padding: 0; list-style: none; }
   letter-spacing: 0.06em;
   color: var(--ink-50);
   background: var(--paper);
+  /* Only once the page has moved — at rest there is nothing to lift away
+     from, and a shadow across the empty hero reads as arbitrary.            */
+  box-shadow: 0 1px 2px rgba(28, 26, 24, 0), 0 8px 24px -12px rgba(28, 26, 24, 0);
+  transition: box-shadow 0.3s ease;
+}
+.site-header.is-stuck {
+  box-shadow: 0 1px 2px rgba(28, 26, 24, 0.04), 0 8px 24px -12px rgba(28, 26, 24, 0.16);
 }
 .site-header__name {
   font-family: var(--display);

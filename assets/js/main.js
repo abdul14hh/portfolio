@@ -64,6 +64,26 @@
   }
 
   /* =======================================================================
+     Header shadow — only once the page has scrolled
+     ======================================================================= */
+  var header = document.querySelector('.site-header');
+
+  if (header) {
+    var stuck = false;
+
+    function syncHeader() {
+      var should = window.scrollY > 8;
+      if (should !== stuck) {
+        stuck = should;
+        header.classList.toggle('is-stuck', stuck);
+      }
+    }
+
+    window.addEventListener('scroll', syncHeader, { passive: true });
+    syncHeader();
+  }
+
+  /* =======================================================================
      Parallax — drift the frame, never the artwork
      ======================================================================= */
   if (!reduceMotion) {
