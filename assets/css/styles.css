@@ -138,27 +138,11 @@ ul { padding: 0; list-style: none; }
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  padding: 20px var(--gutter) 48px;
+  padding: 20px var(--gutter);
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--ink-50);
-  /* Solid behind the wordmark and nav, then an eased falloff. A plain
-     two-stop fade has a perceptually hard midpoint, which makes text
-     scrolling underneath look half-erased rather than gently obscured.      */
-  background: linear-gradient(
-    to bottom,
-    rgba(247, 245, 241, 1)    0%,
-    rgba(247, 245, 241, 1)    52%,
-    rgba(247, 245, 241, 0.94) 62%,
-    rgba(247, 245, 241, 0.85) 70%,
-    rgba(247, 245, 241, 0.73) 77%,
-    rgba(247, 245, 241, 0.58) 83%,
-    rgba(247, 245, 241, 0.42) 88%,
-    rgba(247, 245, 241, 0.27) 93%,
-    rgba(247, 245, 241, 0.14) 96%,
-    rgba(247, 245, 241, 0.05) 98.5%,
-    rgba(247, 245, 241, 0)    100%
-  );
+  background: var(--paper);
 }
 .site-header__name {
   font-family: var(--display);
