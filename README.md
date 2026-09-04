@@ -1,5 +1,7 @@
 # Abdullah Shaikh — Portfolio v2
 
+**Live: https://abdul14hh.github.io/portfolio/** — deployed from `main`.
+
 A single-page portfolio of selected product visuals (key visuals, packaging
 stories and social campaigns) for Jaquar, Soft Care, Crew, Born Good and
 Perky Jerky.
@@ -22,7 +24,18 @@ site.
 
 ## Fonts
 
-Instrument Serif + Instrument Sans, loaded from Google Fonts.
+**TeX Gyre Heros**, self-hosted from `assets/fonts/` — Regular, Bold and Bold
+Italic, subset to Latin, ~68 KB total.
+
+Heros is a clone of Helvetica (via URW's Nimbus Sans) under the [GUST Font
+License](assets/fonts/GUST-FONT-LICENSE.txt), which permits redistribution.
+Helvetica itself is a licensed Monotype typeface — it ships with macOS but
+cannot legally be served as a webfont, and Windows and Android have never
+included it, so a plain `font-family: Helvetica` silently degrades to Arial
+for most visitors. Self-hosting the clone gives everyone the same letterforms.
+
+Only Regular and Bold exist in this family, so avoid `font-weight: 500` — the
+browser will synthesise a fake medium.
 
 ## Local preview
 
@@ -34,6 +47,16 @@ python -m http.server 8000
 ```
 
 ## Images
+
+Served as **WebP** (quality 85), converted from the original PNGs at their
+existing dimensions — 11.1 MB → 1.1 MB, a 90% saving with no visible loss and
+no change to the `width`/`height` attributes. The PNGs were removed from the
+tree; they remain in git history (`git show <sha>:assets/img/<name>.png`).
+
+Note the sources are only 972×600 (600×600 for Born Good) but display at up to
+~1300 px wide, so they are already being upscaled slightly. Re-exporting from
+the original artwork at 2× would sharpen the site — the WebP step deliberately
+did not resize, since shrinking would make that worse.
 
 The 11 product visuals in `assets/img/` are the real campaign artworks,
 renamed from the Claude Design project's `uploads/` folder:
@@ -60,6 +83,11 @@ portfolio-v2/
 ├── assets/
 │   ├── css/styles.css
 │   ├── js/main.js
-│   └── img/                 # 11 product visuals
+│   ├── fonts/               # TeX Gyre Heros woff2 + licence
+│   ├── img/                 # 11 product visuals, portrait, og-cover
+│   └── abdullah-shaikh-resume.pdf
 └── README.md
 ```
+
+The `.png` extensions in the table above are the original filenames; the files
+served are `.webp`.
