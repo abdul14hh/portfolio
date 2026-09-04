@@ -138,11 +138,27 @@ ul { padding: 0; list-style: none; }
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  padding: 22px var(--gutter);
+  padding: 20px var(--gutter) 48px;
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--ink-50);
-  background: linear-gradient(var(--paper) 40%, rgba(247, 245, 241, 0));
+  /* Solid behind the wordmark and nav, then an eased falloff. A plain
+     two-stop fade has a perceptually hard midpoint, which makes text
+     scrolling underneath look half-erased rather than gently obscured.      */
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 245, 241, 1)    0%,
+    rgba(247, 245, 241, 1)    52%,
+    rgba(247, 245, 241, 0.94) 62%,
+    rgba(247, 245, 241, 0.85) 70%,
+    rgba(247, 245, 241, 0.73) 77%,
+    rgba(247, 245, 241, 0.58) 83%,
+    rgba(247, 245, 241, 0.42) 88%,
+    rgba(247, 245, 241, 0.27) 93%,
+    rgba(247, 245, 241, 0.14) 96%,
+    rgba(247, 245, 241, 0.05) 98.5%,
+    rgba(247, 245, 241, 0)    100%
+  );
 }
 .site-header__name {
   font-family: var(--display);
@@ -433,24 +449,19 @@ ul { padding: 0; list-style: none; }
 .contact__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: clamp(28px, 4vw, 44px);
+  gap: clamp(20px, 3vw, 34px);
+  margin-top: clamp(24px, 3.5vw, 36px);
 }
 .contact__out {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 10px 20px;
-  border: 1px solid var(--rule-strong);
-  border-radius: 100px;
   font-size: 14px;
-  letter-spacing: 0.01em;
   color: var(--ink-72);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--rule-strong);
   transition: border-color 0.25s ease, color 0.25s ease;
 }
 .contact__out:hover {
-  border-color: var(--accent);
   color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 .contact__services {
   font-size: 14px;
